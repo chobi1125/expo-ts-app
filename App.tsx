@@ -1,21 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    justifyContent:'center',
     alignItems: 'center',
-    justifyContent: 'center',
   },
-});
+  text: {
+    color: 'blue'
+  }
+})
+
+let title:string = "React Native + Expo + TypeScript";
+
+interface User {
+  name: string
+  age: number
+};
+
+let user:User ={
+  name: "sato",
+  age: 25
+};
+
+let printName = (name: string) => {
+  return name = `${name}さん`
+};
+
+let hobby:any = "music"
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>{title}</Text>
+      <Text>名前:{printName(user.name)}</Text>
+      <Text>年齢:{user.age}</Text>
+      <Test />
+    </View>
+  );
+};
+
+const Test = () => {
+  return(
+    <>
+      <Text>Testコンポーネント</Text>
+    </>
+  );
+};
